@@ -17,9 +17,9 @@ class CreateSellersTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->text('bio', 100);
-            $table->string('picture', 100);
-            $table->string('video', 100);
-            $table->enum('trust', array('trusthworthy','good','unreliable'));
+            $table->string('picture', 100)->nullable();
+            $table->string('video', 100)->nullable();
+            $table->enum('trust', array('trusthworthy','good','unreliable'))->nullable()->default(null);
             $table->timestamps();
         });
     }

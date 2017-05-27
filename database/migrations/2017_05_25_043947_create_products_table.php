@@ -21,8 +21,8 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->integer('stock');
             $table->decimal('amount', 5, 2);
-            $table->string('picture', 100);
-            $table->tinyInteger('active');
+            $table->string('picture', 100)->nullable();
+            $table->tinyInteger('active')->default(1);
             $table->timestamps();
         });
     }

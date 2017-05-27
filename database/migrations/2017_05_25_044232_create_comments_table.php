@@ -17,8 +17,8 @@ class CreateCommentsTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('product_id');
-            $table->tinyInteger('rate');
-            $table->text('comment');
+            $table->tinyInteger('rate')->default(1);
+            $table->text('comment')->nullable();
             $table->timestamps();
         });
     }

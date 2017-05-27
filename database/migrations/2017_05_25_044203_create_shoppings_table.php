@@ -20,8 +20,8 @@ class CreateShoppingsTable extends Migration
             $table->integer('user_id');
             $table->string('title', 100);
             $table->integer('quantity');
-            $table->enum('deliver', array('pending','processed','delivered','canceled','returned'));
-            $table->enum('payment', array('pending','processed','payed','canceled','returned'));
+            $table->enum('deliver', array('pending','processed','delivered','canceled','returned'))->default('pending');
+            $table->enum('payment', array('pending','processed','payed','canceled','returned'))->default('pending');
             $table->decimal('amount', 5, 2);
             $table->timestamps();
         });
